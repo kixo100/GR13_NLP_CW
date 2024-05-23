@@ -1,10 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team 13 Sequence Classifier</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'nlp_classifier/styles.css' %}">
 </head>
 <body>
@@ -16,17 +17,36 @@
         <div class="content">
             <form method="post" action="{% url 'predict' %}">
                 {% csrf_token %}
-                <textarea name="sentence" rows="4" placeholder="Enter the sentence"></textarea>
+                <textarea name="sentence" rows="4" placeholder="Enter the sentence">{{ sentence }}</textarea>
                 <button type="submit">Classify</button>
             </form>
             {% if prediction %}
                 <div class="result">
                     <h2>Prediction</h2>
                     <div class="prediction">
-                        {{ prediction }}
+                        {{ prediction|safe }}
                     </div>
                 </div>
             {% endif %}
+            <h3>Legend:</h3>
+            <ul class="legend">
+                <li>
+                    <span class="legend-color-box b-o"></span>
+                    B-O
+                </li>
+                <li>
+                    <span class="legend-color-box b-ac"></span>
+                    B-AC
+                </li>
+                <li>
+                    <span class="legend-color-box b-lf"></span>
+                    B-LF
+                </li>
+                <li>
+                    <span class="legend-color-box i-lf"></span>
+                    I-LF
+                </li>
+            </ul>
         </div>
     </div>
 </body>

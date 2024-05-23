@@ -1,0 +1,152 @@
+2024-05-23 19:59:59,665 - Watching for file changes with StatReloader
+2024-05-23 20:00:05,062 - Input: MA BA KFC, Output: <span style="color: green">M</span><span style="color: green">A</span><span style="color: black"> </span><span style="color: darkgreen">B</span><span style="color: darkgreen">A</span><span style="color: black"> </span><span style="color: darkgreen">K</span><span style="color: darkgreen">F</span><span style="color: darkgreen">C</span>
+2024-05-23 20:03:25,058 - Watching for file changes with StatReloader
+2024-05-23 20:03:30,410 - Input: Sami, Output: <span style="color: red">S</span><span style="color: red">a</span><span style="color: red">m</span><span style="color: red">i</span>
+2024-05-23 20:07:09,909 - /Users/samiaitsaadi/nlp_team13/sequence_classifier_team13/nlp_classifier/views.py changed, reloading.
+2024-05-23 20:07:14,753 - Watching for file changes with StatReloader
+2024-05-23 20:07:38,212 - Input: SAmi kfc, Output: B-LF B-LF B-LF I-LF I-LF
+2024-05-23 20:09:29,611 - Input: sami, Output: B-O B-O
+2024-05-23 20:11:54,820 - Input: fasfsdfsad, Output: B-LF B-LF B-AC B-AC B-AC B-AC
+2024-05-23 20:16:36,489 - Input: Sami, Output: B-AC B-AC
+2024-05-23 20:17:32,878 - Input: Sami, Output: B-AC B-AC
+2024-05-23 20:17:40,827 - Input: Sami, Output: B-AC B-AC
+2024-05-23 20:18:09,909 - Input: Sami, Output: B-AC B-AC
+2024-05-23 20:24:57,699 - Input: KFC FRIES, Output: B-LF B-LF I-LF I-LF
+2024-05-23 20:25:04,293 - Input: kfc fries, Output: B-LF B-LF I-LF
+2024-05-23 20:25:08,541 - Input: ml, Output: B-O
+2024-05-23 20:25:11,477 - Input: nlp , Output: B-LF B-LF B-O
+2024-05-23 20:25:14,774 - Input: NLP, Output: B-AC B-AC
+2024-05-23 20:25:22,324 - Input: nlp, Output: B-AC B-AC
+2024-05-23 20:25:31,009 - Input: NLP, Output: B-AC B-AC
+2024-05-23 20:25:37,328 - Input: NLP, Output: B-AC B-AC
+2024-05-23 20:25:43,085 - Input: wwe , Output: B-AC B-O B-O
+2024-05-23 20:25:46,323 - Input: WW , Output: B-AC B-O
+2024-05-23 20:28:36,293 - Input: Hello, I study computer science at the University of Surrey , Output: B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O
+2024-05-23 20:28:40,709 - Input: Hello, I study computer science at the University of Surrey ML, Output: B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O
+2024-05-23 20:28:54,223 - Input: ML Hello, I study computer science at the University of Surrey , Output: B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O
+2024-05-23 20:29:07,502 - Input: ML AI, Output: B-LF I-LF
+2024-05-23 20:29:25,518 - Input: ML AI Hello my name is , Output: B-LF I-LF I-LF B-O B-O B-O B-O
+2024-05-23 20:33:45,790 - Input: Hello my name is Sami, I'm Studying CS at the University of Surrey and NLP is the best !, Output: B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-AC B-O B-O B-O B-O B-O B-O B-AC B-AC B-O B-O B-O B-O
+2024-05-23 20:54:15,560 - Watching for file changes with StatReloader
+2024-05-23 20:54:28,810 - Internal Server Error: /predict/
+Traceback (most recent call last):
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table nlp_classifier_prediction has no column named generate_time
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/samiaitsaadi/nlp_team13/sequence_classifier_team13/nlp_classifier/views.py", line 65, in predict
+    Prediction.objects.create(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table nlp_classifier_prediction has no column named generate_time
+2024-05-23 20:56:20,956 - Watching for file changes with StatReloader
+2024-05-23 20:56:41,916 - Internal Server Error: /predict/
+Traceback (most recent call last):
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: table nlp_classifier_prediction has no column named generate_time
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/samiaitsaadi/nlp_team13/sequence_classifier_team13/nlp_classifier/views.py", line 65, in predict
+    Prediction.objects.create(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/samiaitsaadi/nlp_team13/venv/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: table nlp_classifier_prediction has no column named generate_time
+2024-05-23 20:57:22,200 - Watching for file changes with StatReloader
+2024-05-23 20:57:30,900 - Input: sami aitsa, Output: B-LF B-LF B-O B-O B-O, Generate Time: 0.9108119010925293, Total Time: 0.9109690189361572
+2024-05-23 21:03:06,805 - /Users/samiaitsaadi/nlp_team13/sequence_classifier_team13/nlp_classifier/models.py changed, reloading.
+2024-05-23 21:03:11,043 - Watching for file changes with StatReloader
+2024-05-23 21:03:12,413 - /Users/samiaitsaadi/nlp_team13/sequence_classifier_team13/nlp_classifier/views.py changed, reloading.
+2024-05-23 21:03:37,211 - Watching for file changes with StatReloader
+2024-05-23 21:03:46,770 - Input: Sami asd fds fads fsd fdsfsadfasd, Output: B-LF B-LF I-LF I-LF I-LF I-LF I-LF I-LF I-LF I-LF B-AC B-AC B-AC B-AC B-AC B-AC B-AC, Created At: 2024-05-23 21:03:46.770189+00:00, Total Time: 0.9837808609008789
+2024-05-23 21:05:01,707 - Input: Hi my name is Sami I Study at the University of Surrey !! :) , Output: B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O, Created At: 2024-05-23 21:05:01.707348+00:00, Total Time: 0.041249990463256836
+2024-05-23 21:05:07,893 - Input: <MD ddasd asd adHi my name is Sami I Study at the University of Surrey !! :) , Output: B-AC B-AC B-AC B-AC B-AC B-O B-O B-AC B-AC B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O, Created At: 2024-05-23 21:05:07.893619+00:00, Total Time: 0.04331707954406738
+2024-05-23 21:07:02,338 - Input: Hi my name is Sami Aitsaadi From the University of surrey ! UOS NLP is da BEST :))) , Output: B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-O B-LF I-LF I-LF I-LF B-O B-AC B-AC B-AC B-AC B-O B-LF I-LF B-O B-O B-O, Created At: 2024-05-23 21:07:02.338936+00:00, Total Time: 0.044821977615356445
+2024-05-23 21:08:15,303 - Input: Hi there !, Output: B-O B-O B-O, Created At: 2024-05-23 21:08:15.303057+00:00, Total Time: 0.04509592056274414
+2024-05-23 21:12:11,869 - /Users/samiaitsaadi/nlp_team13/sequence_classifier_team13/nlp_classifier/views.py changed, reloading.
+2024-05-23 21:12:16,868 - Watching for file changes with StatReloader
+2024-05-23 21:16:22,163 - /Users/samiaitsaadi/nlp_team13/sequence_classifier_team13/nlp_classifier/admin.py changed, reloading.
+2024-05-23 21:16:26,629 - Watching for file changes with StatReloader
+2024-05-23 21:16:51,983 - Input: Hello my name is samsterrr
+, Output: B-O B-O B-O B-O B-O B-O B-O B-O B-O, Created At: 2024-05-23 21:16:51.983453+00:00, Total Time: 0.9720470905303955

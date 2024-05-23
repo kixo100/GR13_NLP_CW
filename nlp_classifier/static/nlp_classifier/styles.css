@@ -1,11 +1,12 @@
 /* General Styles */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #eef2f7;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     color: #333;
@@ -19,23 +20,30 @@ body {
 h1 {
     font-size: 2.5rem;
     margin: 0;
-    color: #222;
+    color: #333;
+    font-family: inherit; /* Ensures the same font family */
 }
 
 .description {
     font-size: 1.2rem;
-    color: #555;
+    color: #666;
     margin-top: 10px;
     margin-bottom: 30px;
+    font-family: inherit; /* Ensures the same font family */
 }
 
 .container {
     width: 90%;
-    max-width: 700px;
-    padding: 40px;
-    background: #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    max-width: 600px;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);
 }
 
 .content {
@@ -50,39 +58,49 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: inherit; /* Ensures the same font family */
 }
 
 textarea {
     width: 100%;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 12px;
     border: 1px solid #ddd;
     font-size: 1rem;
     resize: none;
     margin-bottom: 15px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: inherit; /* Ensures the same font family */
 }
 
 textarea:focus {
-    border-color: #007BFF;
+    border-color: #007bff;
     outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+textarea::placeholder {
+    font-style: italic;
+    color: #aaa;
+    font-family: inherit; /* Ensures the same font family */
 }
 
 button {
     padding: 12px 30px;
-    background-color: #007BFF;
+    background-color: #6200ea; /* Purple */
     border: none;
     color: white;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(98, 0, 234, 0.4); /* Purple shadow */
+    font-family: inherit; /* Ensures the same font family */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #3700b3; /* Darker purple */
     transform: translateY(-2px);
 }
 
@@ -95,17 +113,18 @@ button:hover {
 h2 {
     margin-top: 0;
     font-size: 2rem;
-    color: #222;
+    color: #333;
+    font-family: inherit; /* Ensures the same font family */
 }
 
 .prediction {
     background: #f4f4f4;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     border: 1px solid #ddd;
     text-align: left;
     word-break: break-word;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: inherit; /* Ensures the same font family */
     font-size: 1rem;
     color: #555;
 }
@@ -113,6 +132,51 @@ h2 {
 textarea::placeholder {
     font-style: italic;
     color: #aaa;
+    font-family: inherit; /* Ensures the same font family */
+}
+
+/* Legend Styles */
+.legend {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-family: inherit; /* Ensures the same font family */
+}
+
+.legend-color-box {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+
+/* Legend Colors */
+.legend-color-box.b-o {
+    background-color: #808080; /* Gray */
+}
+
+.legend-color-box.b-ac {
+    background-color: #ff0000; /* Red */
+}
+
+.legend-color-box.b-lf {
+    background-color: #00c853; /* Green */
+}
+
+.legend-color-box.i-lf {
+    background-color: #2962ff; /* Blue */
 }
 
 /* Responsive Design */
