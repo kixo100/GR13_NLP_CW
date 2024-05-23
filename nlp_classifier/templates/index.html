@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 13 Sequence Classifier</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nlp_classifier/styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>Team 13 Sequence Classifier</h1>
+        <p class="description">Enter a sentence below to classify the sequence:</p>
+    </div>
+    <div class="container">
+        <div class="content">
+            <form method="post" action="{% url 'predict' %}">
+                {% csrf_token %}
+                <textarea name="sentence" rows="4" placeholder="Enter the sentence"></textarea>
+                <button type="submit">Classify</button>
+            </form>
+            {% if prediction %}
+                <div class="result">
+                    <h2>Prediction</h2>
+                    <div class="prediction">
+                        {{ prediction }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
